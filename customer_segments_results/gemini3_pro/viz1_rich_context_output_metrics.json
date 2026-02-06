@@ -1,0 +1,46 @@
+{
+  "image_path": "customer_segments_results/gemini3_pro/viz1_rich_context_output.png",
+  "timestamp": "2026-02-04T05:55:29.948771",
+  "color_delta_e": {
+    "min_delta_e": 30.162240096522055,
+    "max_delta_e": 30.162240096522055,
+    "mean_delta_e": 30.162240096522055,
+    "median_delta_e": 30.162240096522055,
+    "distinguishable_pairs": 1,
+    "total_pairs": 1,
+    "distinguishability_ratio": 1.0,
+    "all_delta_e_values": [
+      30.162240096522055
+    ]
+  },
+  "visual_entropy": 1.3295116971603618,
+  "code_accuracy": {
+    "syntax_valid": true,
+    "has_imports": true,
+    "has_visualization": true,
+    "has_save": true,
+    "execution_success": true,
+    "error_message": null,
+    "accuracy_score": 100.0
+  },
+  "expert_quality_rating_template": {
+    "rating_instructions": "Rate on a scale of 1-5 (1=Very Poor, 5=Excellent)",
+    "clarity": null,
+    "appropriateness": null,
+    "completeness": null,
+    "aesthetics": null,
+    "accuracy": null,
+    "overall_quality": null,
+    "comments": ""
+  },
+  "user_satisfaction_template": {
+    "rating_instructions": "Rate on a scale of 1-5 (1=Very Dissatisfied, 5=Very Satisfied)",
+    "ease_of_understanding": null,
+    "usefulness": null,
+    "trustworthiness": null,
+    "likelihood_to_use": null,
+    "overall_satisfaction": null,
+    "comments": ""
+  },
+  "fidelity_score": null
+}
