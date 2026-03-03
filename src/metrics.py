@@ -139,7 +139,7 @@ class VisualizationMetrics:
         dominant_colors = []
         for color, count in color_counts.most_common(n_colors * 3):
             # Skip very light colors (likely background)
-            if sum(color) < 700:  # Not too close to white (255, 255, 255)
+            if sum(color) < 740:  # Not too close to white (255, 255, 255)
                 dominant_colors.append(color)
                 if len(dominant_colors) >= n_colors:
                     break
