@@ -39,8 +39,6 @@ Thumbs.db
 
 # Project specific
 outputs/
-data/*.csv
-!data/.gitkeep
 *.log
 temp_*.py
 
