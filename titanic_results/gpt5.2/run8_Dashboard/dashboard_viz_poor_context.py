@@ -1,6 +1,4 @@
 '''
-Without the Context-Rich prompt, the model struggled. 
-
 Prompt = 
 The Titanic dataset contains passenger information from the RMS Titanic disaster of 1912. 
 This is a sociodemographic dataset with approximately 891 passenger records. 
@@ -9,11 +7,8 @@ Provide ONLY the Python code wrapped in triple backticks.
 '''
 
 '''
-Failure 1 (Hallucination): FileNotFoundError: '/mnt/data/titanic.csv'
 
-What it proves: Without context, the model defaults to its internal training environment paths instead of your actual project structure.
-
-Failure 2 (Schema Error): KeyError: 'sex'
+Failure 1 (Schema Error): KeyError: 'sex'
 
 What it proves: The model "hallucinated" that the column name was Sex (Capitalized). 
 In our specific dataset, it is sex (lowercase). Because I didn't give it the schema in the prompt, it guessed wrong and crashed.

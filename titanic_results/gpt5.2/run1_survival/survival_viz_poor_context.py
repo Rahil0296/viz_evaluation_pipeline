@@ -1,10 +1,4 @@
 '''
-Without the Context-Rich prompt, the model struggled. 
-It likely tried to guess the file location or column names and failed twice before finally getting it right. 
-
-The model "hallucinated" the file path. 
-It used /mnt/data/titanic.csv (which only exists in its own cloud computer), but our file is at data/titanic.csv.
-
 Prompt = 
 The Titanic dataset contains passenger information from the RMS Titanic disaster of 1912. 
 This is a sociodemographic dataset with approximately 891 passenger records. 
