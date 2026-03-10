@@ -1,0 +1,50 @@
+{
+  "dataset_model_context": "defi_anomalies_results | gpt5.2 | poor context",
+  "num_runs": 3,
+  "per_run_results": [
+    {
+      "run": "run1_poor_context",
+      "mean_delta_e": 24.347631682137433,
+      "visual_entropy": 1.038087161345569,
+      "distinguishability_ratio": 0.8444444444444444,
+      "execution_success": true
+    },
+    {
+      "run": "run2_poor_context",
+      "mean_delta_e": 26.582586754756303,
+      "visual_entropy": 0.9910434651310691,
+      "distinguishability_ratio": 0.8666666666666667,
+      "execution_success": true
+    },
+    {
+      "run": "run3_poor_context",
+      "mean_delta_e": 24.347631682137433,
+      "visual_entropy": 1.04725288440428,
+      "distinguishability_ratio": 0.8444444444444444,
+      "execution_success": true
+    }
+  ],
+  "averages": {
+    "mean_delta_e": 25.0926,
+    "visual_entropy": 1.0255,
+    "distinguishability_ratio": 0.8519,
+    "execution_pass_rate": 1.0
+  },
+  "raw_values": {
+    "mean_delta_e_per_run": [
+      24.347631682137433,
+      26.582586754756303,
+      24.347631682137433
+    ],
+    "visual_entropy_per_run": [
+      1.038087161345569,
+      0.9910434651310691,
+      1.04725288440428
+    ],
+    "distinguishability_ratio_per_run": [
+      0.8444444444444444,
+      0.8666666666666667,
+      0.8444444444444444
+    ]
+  }
+}
