@@ -50,10 +50,10 @@ df = pd.read_csv("data/titanic.csv")
 # -----------------------------
 # Handle Missing Values
 # -----------------------------
-# Fill missing age with median
+# Fill age with median
 df["age"] = df["age"].fillna(df["age"].median())
 
-# Fill missing embarked with mode
+# Fill embarked with mode
 df["embarked"] = df["embarked"].fillna(df["embarked"].mode()[0])
 
 # -----------------------------
@@ -61,123 +61,121 @@ df["embarked"] = df["embarked"].fillna(df["embarked"].mode()[0])
 # -----------------------------
 df["family_size"] = df["sibsp"] + df["parch"] + 1
 
-# Map labels for readability
+# Map survival for readability
 df["survived_label"] = df["survived"].map({0: "Did Not Survive", 1: "Survived"})
-df["pclass_label"] = df["pclass"].map({1: "1st Class", 2: "2nd Class", 3: "3rd Class"})
-df["embarked_label"] = df["embarked"].map({
-    "C": "Cherbourg",
-    "Q": "Queenstown",
-    "S": "Southampton"
-})
 
 # -----------------------------
 # Styling
 # -----------------------------
-sns.set_style("whitegrid")
-sns.set_context("talk")
+sns.set_theme(style="whitegrid", context="talk")
 
-fig, axes = plt.subplots(3, 2, figsize=(18, 16))
-fig.suptitle("Titanic Disaster: Comprehensive Survival Analysis", fontsize=24, weight="bold")
+# -----------------------------
+# Create Dashboard (2x3)
+# -----------------------------
+fig, axes = plt.subplots(2, 3, figsize=(20, 12))
 
 # -----------------------------
 # 1. Survival by Passenger Class
 # -----------------------------
-sns.countplot(
+sns.barplot(
     data=df,
-    x="pclass_label",
-    hue="survived_label",
-    palette="Set2",
-    ax=axes[0, 0]
+    x="pclass",
+    y="survived",
+    ax=axes[0, 0],
+    estimator=np.mean,
+    palette="Blues_d"
 )
-axes[0, 0].set_title("Survival by Passenger Class")
+axes[0, 0].set_title("Survival Rate by Passenger Class")
 axes[0, 0].set_xlabel("Passenger Class")
-axes[0, 0].set_ylabel("Passenger Count")
-axes[0, 0].legend(title="Survival")
+axes[0, 0].set_ylabel("Survival Rate")
 
 # -----------------------------
 # 2. Survival by Gender
 # -----------------------------
-sns.countplot(
+sns.barplot(
     data=df,
     x="sex",
-    hue="survived_label",
-    palette="Set1",
-    ax=axes[0, 1]
+    y="survived",
+    ax=axes[0, 1],
+    estimator=np.mean,
+    palette="Set2"
 )
-axes[0, 1].set_title("Survival by Gender")
+axes[0, 1].set_title("Survival Rate by Gender")
 axes[0, 1].set_xlabel("Gender")
-axes[0, 1].set_ylabel("Passenger Count")
-axes[0, 1].legend(title="Survival")
+axes[0, 1].set_ylabel("Survival Rate")
 
 # -----------------------------
 # 3. Age Distribution
 # -----------------------------
 sns.histplot(
-    data=df,
-    x="age",
-    hue="survived_label",
+    df["age"],
     bins=30,
     kde=True,
-    palette="Set2",
-    ax=axes[1, 0]
+    ax=axes[0, 2],
+    color="steelblue"
 )
-axes[1, 0].set_title("Age Distribution by Survival")
-axes[1, 0].set_xlabel("Age")
-axes[1, 0].set_ylabel("Count")
+axes[0, 2].set_title("Age Distribution of Passengers")
+axes[0, 2].set_xlabel("Age")
+axes[0, 2].set_ylabel("Count")
 
 # -----------------------------
 # 4. Fare Distribution
 # -----------------------------
 sns.histplot(
-    data=df,
-    x="fare",
+    df["fare"],
     bins=40,
     kde=True,
-    color="steelblue",
-    ax=axes[1, 1]
+    ax=axes[1, 0],
+    color="darkorange"
 )
-axes[1, 1].set_title("Fare Distribution")
-axes[1, 1].set_xlabel("Fare")
-axes[1, 1].set_ylabel("Count")
+axes[1, 0].set_title("Fare Distribution")
+axes[1, 0].set_xlabel("Fare")
+axes[1, 0].set_ylabel("Count")
 
 # -----------------------------
-# 5. Family Size vs Survival
+# 5. Survival by Family Size
 # -----------------------------
-sns.countplot(
-    data=df,
+family_survival = df.groupby("family_size")["survived"].mean().reset_index()
+
+sns.barplot(
+    data=family_survival,
     x="family_size",
-    hue="survived_label",
-    palette="Set3",
-    ax=axes[2, 0]
+    y="survived",
+    ax=axes[1, 1],
+    palette="viridis"
 )
-axes[2, 0].set_title("Family Size vs Survival")
-axes[2, 0].set_xlabel("Family Size (Including Passenger)")
-axes[2, 0].set_ylabel("Passenger Count")
-axes[2, 0].legend(title="Survival")
+axes[1, 1].set_title("Survival Rate by Family Size")
+axes[1, 1].set_xlabel("Family Size")
+axes[1, 1].set_ylabel("Survival Rate")
 
 # -----------------------------
 # 6. Survival by Embarkation Port
 # -----------------------------
-sns.countplot(
+sns.barplot(
     data=df,
-    x="embarked_label",
-    hue="survived_label",
-    palette="coolwarm",
-    ax=axes[2, 1]
+    x="embarked",
+    y="survived",
+    ax=axes[1, 2],
+    estimator=np.mean,
+    palette="magma"
 )
-axes[2, 1].set_title("Survival by Embarkation Port")
-axes[2, 1].set_xlabel("Embarkation Port")
-axes[2, 1].set_ylabel("Passenger Count")
-axes[2, 1].legend(title="Survival")
+axes[1, 2].set_title("Survival Rate by Embarkation Port")
+axes[1, 2].set_xlabel("Embarkation Port")
+axes[1, 2].set_ylabel("Survival Rate")
 
 # -----------------------------
-# Layout Adjustments
+# Main Title and Layout
 # -----------------------------
+fig.suptitle(
+    "Titanic Disaster: Comprehensive Survival Analysis",
+    fontsize=24,
+    fontweight="bold"
+)
+
 plt.tight_layout(rect=[0, 0, 1, 0.96])
 
 # -----------------------------
-# Save Output
+# Save Figure
 # -----------------------------
-plt.savefig('titanic_results/gpt5.2/dashboard/run1_rich_context/dashboard_viz_rich_context_output.png', dpi=300, bbox_inches='tight')
+plt.savefig('titanic_results/gpt5.2/dashboard/run2_rich_context/dashboard_viz_rich_context_output.png', dpi=300, bbox_inches='tight')
 plt.close()
-
