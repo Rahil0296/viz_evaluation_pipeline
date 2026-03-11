@@ -123,6 +123,5 @@ axes[1, 2].set_ylabel("Survival Rate")
 plt.tight_layout(rect=[0, 0, 1, 0.95])
 
 # Save the multi-panel dashboard directly to file
-plt.savefig('titanic_results/gemini3_pro/dashboard/run1_rich_context/dashboard_viz_rich_context_output.png', dpi=300, bbox_inches='tight')
+plt.savefig('titanic_results/gemini3_pro/dashboard/run2_rich_context/dashboard_viz_rich_context_output.png', dpi=300, bbox_inches='tight')
 plt.close()
-

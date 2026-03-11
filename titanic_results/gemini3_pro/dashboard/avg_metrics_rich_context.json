@@ -1,0 +1,50 @@
+{
+  "dataset_model_context": "titanic_results | gemini3_pro/dashboard | rich context",
+  "num_runs": 3,
+  "per_run_results": [
+    {
+      "run": "run1_rich_context",
+      "mean_delta_e": 30.16579675251763,
+      "visual_entropy": 1.2421489667641117,
+      "distinguishability_ratio": 0.8,
+      "execution_success": true
+    },
+    {
+      "run": "run2_rich_context",
+      "mean_delta_e": 30.16579675251763,
+      "visual_entropy": 1.24215098933099,
+      "distinguishability_ratio": 0.8,
+      "execution_success": true
+    },
+    {
+      "run": "run3_rich_context",
+      "mean_delta_e": 37.60269616156798,
+      "visual_entropy": 1.4393498142701877,
+      "distinguishability_ratio": 0.9777777777777777,
+      "execution_success": true
+    }
+  ],
+  "averages": {
+    "mean_delta_e": 32.6448,
+    "visual_entropy": 1.3079,
+    "distinguishability_ratio": 0.8593,
+    "execution_pass_rate": 1.0
+  },
+  "raw_values": {
+    "mean_delta_e_per_run": [
+      30.16579675251763,
+      30.16579675251763,
+      37.60269616156798
+    ],
+    "visual_entropy_per_run": [
+      1.2421489667641117,
+      1.24215098933099,
+      1.4393498142701877
+    ],
+    "distinguishability_ratio_per_run": [
+      0.8,
+      0.8,
+      0.9777777777777777
+    ]
+  }
+}
