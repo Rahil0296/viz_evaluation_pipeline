@@ -27,5 +27,5 @@ plt.ylim(0, 1)
 
 # Display the plot
 plt.tight_layout()
-plt.savefig('output.png', dpi=300, bbox_inches='tight')
+plt.savefig('titanic_results/gemini3_pro/survival/run1_poor_context/survival_viz_poor_context_output.png', dpi=300, bbox_inches='tight')
 plt.close()

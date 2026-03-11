@@ -49,6 +49,10 @@ Create a visualization showing survival rates across different passenger classes
 
 - Show both the count of survivors and survival percentage for each class
 - Use a bar chart or grouped bar 
+- Use colorblind-friendly colors
+- Save as 'output.png' with DPI=300
+
+Provide ONLY the Python code wrapped in triple backticks.
 
 '''
 
