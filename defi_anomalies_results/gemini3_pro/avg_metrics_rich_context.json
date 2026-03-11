@@ -1,0 +1,50 @@
+{
+  "dataset_model_context": "defi_anomalies_results | gemini3_pro | rich context",
+  "num_runs": 3,
+  "per_run_results": [
+    {
+      "run": "run1_rich_context",
+      "mean_delta_e": 27.541643650412222,
+      "visual_entropy": 0.5864626578053689,
+      "distinguishability_ratio": 0.9111111111111111,
+      "execution_success": true
+    },
+    {
+      "run": "run2_rich_context",
+      "mean_delta_e": 27.54164365041223,
+      "visual_entropy": 0.5849108190989856,
+      "distinguishability_ratio": 0.9111111111111111,
+      "execution_success": true
+    },
+    {
+      "run": "run3_rich_context",
+      "mean_delta_e": 27.541643650412222,
+      "visual_entropy": 0.5802900138658361,
+      "distinguishability_ratio": 0.9111111111111111,
+      "execution_success": true
+    }
+  ],
+  "averages": {
+    "mean_delta_e": 27.5416,
+    "visual_entropy": 0.5839,
+    "distinguishability_ratio": 0.9111,
+    "execution_pass_rate": 1.0
+  },
+  "raw_values": {
+    "mean_delta_e_per_run": [
+      27.541643650412222,
+      27.54164365041223,
+      27.541643650412222
+    ],
+    "visual_entropy_per_run": [
+      0.5864626578053689,
+      0.5849108190989856,
+      0.5802900138658361
+    ],
+    "distinguishability_ratio_per_run": [
+      0.9111111111111111,
+      0.9111111111111111,
+      0.9111111111111111
+    ]
+  }
+}
