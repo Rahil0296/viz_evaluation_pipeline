@@ -32,25 +32,14 @@ Provide ONLY the Python code wrapped in triple backticks.
 # Context:
 # - Model output was obtained via Gemini 3 Pro UI (manual workflow).
 #
-# Issues observed when running raw model code locally:
-#  1) Dataset path assumption:
-#     - Raw: pd.read_csv('titanic.csv')
-#     - Repo uses: data/titanic.csv
-#     - Fix: pd.read_csv('titanic.csv') -> pd.read_csv('data/titanic.csv')
-#
-#  2) No saved image for grading:
-#     - Raw ended with plt.show() only (no saved PNG)
-#     - Fix: save figure to PNG and close:
-#         plt.savefig('titanic_dashboard.png', dpi=300, bbox_inches='tight'); plt.close()
-#
-#  3) Runtime crash (seaborn palette key mismatch):
+#  1) Runtime crash (seaborn palette key mismatch):
 #     - Error: ValueError about palette dict missing keys {'0','1'} or {0,1} depending on plot
 #     - Cause: seaborn treats categorical levels as strings in some plots and ints in others
 #     - Fix: enforce consistent categorical type for 'survived' by casting to string once:
 #         df['survived'] = df['survived'].astype(str)
 #       and use palette/labels with string keys {'0','1'} for all hue-based plots.
 #
-#  4) Survival-rate (mean) plot requires numeric y:
+#  2) Survival-rate (mean) plot requires numeric y:
 #     - After casting survived to str for palette consistency, barplot mean won't work.
 #     - Fix: add numeric helper column survived_num for Plot 5 only:
 #         df['survived_num'] = df['survived'].astype(int)

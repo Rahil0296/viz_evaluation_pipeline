@@ -10,7 +10,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load the Titanic dataset
-# df = pd.read_csv('/mnt/data/titanic.csv')   # have to remove /mnt/
+# df = pd.read_csv('/mnt/data/titanic.csv')   
 df = pd.read_csv('data/titanic.csv')
 
 # Calculate survival rates by passenger class
