@@ -1,0 +1,50 @@
+{
+  "dataset_model_context": "titanic_results | gpt5.2/dashboard | poor context",
+  "num_runs": 3,
+  "per_run_results": [
+    {
+      "run": "run1_poor_context",
+      "mean_delta_e": 36.299349165445406,
+      "visual_entropy": 1.4746475246454713,
+      "distinguishability_ratio": 0.9777777777777777,
+      "execution_success": false
+    },
+    {
+      "run": "run2_poor_context",
+      "mean_delta_e": 25.301592940246245,
+      "visual_entropy": 0.9667775341103786,
+      "distinguishability_ratio": 0.6444444444444445,
+      "execution_success": false
+    },
+    {
+      "run": "run3_poor_context",
+      "mean_delta_e": 19.378063117112784,
+      "visual_entropy": 1.4936879662048252,
+      "distinguishability_ratio": 0.5111111111111111,
+      "execution_success": false
+    }
+  ],
+  "averages": {
+    "mean_delta_e": 26.993,
+    "visual_entropy": 1.3117,
+    "distinguishability_ratio": 0.7111,
+    "execution_pass_rate": 0.0
+  },
+  "raw_values": {
+    "mean_delta_e_per_run": [
+      36.299349165445406,
+      25.301592940246245,
+      19.378063117112784
+    ],
+    "visual_entropy_per_run": [
+      1.4746475246454713,
+      0.9667775341103786,
+      1.4936879662048252
+    ],
+    "distinguishability_ratio_per_run": [
+      0.9777777777777777,
+      0.6444444444444445,
+      0.5111111111111111
+    ]
+  }
+}
