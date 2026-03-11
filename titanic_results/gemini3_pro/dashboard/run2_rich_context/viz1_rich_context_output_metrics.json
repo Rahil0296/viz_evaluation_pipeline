@@ -1,6 +1,6 @@
 {
-  "image_path": "titanic_results/gemini3_pro/dashboard/run1_rich_context/dashboard_viz_rich_context_output.png",
-  "timestamp": "2026-03-11T06:24:20.124973",
+  "image_path": "titanic_results/gemini3_pro/dashboard/run2_rich_context/dashboard_viz_rich_context_output.png",
+  "timestamp": "2026-03-11T06:55:07.051424",
   "color_delta_e": {
     "min_delta_e": 0.20467920787001814,
     "max_delta_e": 50.03237198986282,
@@ -57,7 +57,7 @@
       0.2062694695237646
     ]
   },
-  "visual_entropy": 1.2421489667641117,
+  "visual_entropy": 1.24215098933099,
   "code_accuracy": {
     "syntax_valid": true,
     "has_imports": true,
