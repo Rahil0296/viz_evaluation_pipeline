@@ -4,7 +4,6 @@ Prompt:
 You are an expert data scientist.
 
 ## Dataset Context:
-(Use the same Titanic context as before...)
 
 ## Your Task: Comprehensive Titanic Dashboard
 
