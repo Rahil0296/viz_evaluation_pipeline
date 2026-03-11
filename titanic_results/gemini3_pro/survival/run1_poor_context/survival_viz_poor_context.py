@@ -7,19 +7,6 @@ Provide ONLY the Python code wrapped in triple backticks.
 
 '''
 
-# =========================
-# MANUAL FIXES APPLIED (DOCUMENTED)
-# Model output issues:
-#   - Used df = pd.read_csv('titanic.csv') (file not present in repo root)
-#   - Used plt.show() and did not save an image (grader requires an output .png)
-#
-# Minimal fixes (no visual/logic changes intended):
-#   1) Input path portability:
-#        pd.read_csv('titanic.csv')  ->  pd.read_csv('data/titanic.csv')
-#   2) Output capture for evaluation:
-#        plt.show()  ->  plt.savefig('output.png', dpi=300, bbox_inches='tight') + plt.close()
-# =========================
-
 
 import pandas as pd
 import seaborn as sns
