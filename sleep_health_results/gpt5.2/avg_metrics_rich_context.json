@@ -1,0 +1,50 @@
+{
+  "dataset_model_context": "sleep_health_results | gpt5.2 | rich context",
+  "num_runs": 3,
+  "per_run_results": [
+    {
+      "run": "run1_rich_context",
+      "mean_delta_e": 5.039344031146569,
+      "visual_entropy": 0.31845198234657046,
+      "distinguishability_ratio": 0.6444444444444445,
+      "execution_success": true
+    },
+    {
+      "run": "run2_rich_context",
+      "mean_delta_e": 5.03934403114657,
+      "visual_entropy": 0.3261312721271573,
+      "distinguishability_ratio": 0.6444444444444445,
+      "execution_success": true
+    },
+    {
+      "run": "run3_rich_context",
+      "mean_delta_e": 5.616022203862678,
+      "visual_entropy": 0.3800074642667316,
+      "distinguishability_ratio": 0.6444444444444445,
+      "execution_success": true
+    }
+  ],
+  "averages": {
+    "mean_delta_e": 5.2316,
+    "visual_entropy": 0.3415,
+    "distinguishability_ratio": 0.6444,
+    "execution_pass_rate": 1.0
+  },
+  "raw_values": {
+    "mean_delta_e_per_run": [
+      5.039344031146569,
+      5.03934403114657,
+      5.616022203862678
+    ],
+    "visual_entropy_per_run": [
+      0.31845198234657046,
+      0.3261312721271573,
+      0.3800074642667316
+    ],
+    "distinguishability_ratio_per_run": [
+      0.6444444444444445,
+      0.6444444444444445,
+      0.6444444444444445
+    ]
+  }
+}

@@ -46,6 +46,6 @@ plt.ylabel("PCA Component 2")
 plt.title("Clustering of Individuals Based on Sleep and Lifestyle Characteristics")
 
 plt.tight_layout()
-plt.savefig("sleep_health_results/gpt5.2/viz1_poor_context_output.png", dpi=300)
+plt.savefig('sleep_health_results/gpt5.2/run1_poor_context/sleep_viz_poor_context_output.png', dpi=300, bbox_inches='tight')
 plt.close()
 
