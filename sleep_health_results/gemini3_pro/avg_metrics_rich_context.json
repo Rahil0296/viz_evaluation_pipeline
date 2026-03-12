@@ -1,0 +1,50 @@
+{
+  "dataset_model_context": "sleep_health_results | gemini3_pro | rich context",
+  "num_runs": 3,
+  "per_run_results": [
+    {
+      "run": "run1_rich_context",
+      "mean_delta_e": 0.7622826617257971,
+      "visual_entropy": 0.4570158173490957,
+      "distinguishability_ratio": 0.0,
+      "execution_success": true
+    },
+    {
+      "run": "run2_rich_context",
+      "mean_delta_e": 5.305175925596991,
+      "visual_entropy": 0.5116301241165185,
+      "distinguishability_ratio": 0.7111111111111111,
+      "execution_success": true
+    },
+    {
+      "run": "run3_rich_context",
+      "mean_delta_e": 0.8375356315729707,
+      "visual_entropy": 0.5267654554588925,
+      "distinguishability_ratio": 0.0,
+      "execution_success": true
+    }
+  ],
+  "averages": {
+    "mean_delta_e": 2.3017,
+    "visual_entropy": 0.4985,
+    "distinguishability_ratio": 0.237,
+    "execution_pass_rate": 1.0
+  },
+  "raw_values": {
+    "mean_delta_e_per_run": [
+      0.7622826617257971,
+      5.305175925596991,
+      0.8375356315729707
+    ],
+    "visual_entropy_per_run": [
+      0.4570158173490957,
+      0.5116301241165185,
+      0.5267654554588925
+    ],
+    "distinguishability_ratio_per_run": [
+      0.0,
+      0.7111111111111111,
+      0.0
+    ]
+  }
+}

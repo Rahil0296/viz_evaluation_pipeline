@@ -1,3 +1,12 @@
+''' 
+PROMPT : 
+
+The Sleep Health and Lifestyle dataset contains information about individuals’ sleep patterns and lifestyle factors. 
+Create a visualization that clusters individuals based on their sleep and lifestyle characteristics. 
+Provide ONLY the Python code wrapped in triple backticks.
+
+'''
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -84,5 +93,5 @@ plt.ylabel('Principal Component 2')
 plt.legend(title='Cluster')
 plt.grid(True)
 
-plt.savefig("sleep_health_results/gemini3_pro/viz1_poor_context_output.png", dpi=300, bbox_inches="tight")
+plt.savefig('sleep_health_results/gemini3_pro/run1_poor_context/sleep_viz_poor_context_output.png', dpi=300, bbox_inches='tight')
 plt.close()

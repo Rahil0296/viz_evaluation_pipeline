@@ -48,9 +48,6 @@ from sklearn.cluster import KMeans
 # ================================
 # 1. Load data
 # ================================
-# FIX 1 (Path alignment):
-# Original Gemini code used 'Sleep_health_and_lifestyle_dataset.csv' in the working directory.
-# We align this with the repository structure: data/...
 file_path = 'data/Sleep_health_and_lifestyle_dataset.csv'
 df = pd.read_csv(file_path)
 
@@ -84,14 +81,8 @@ pca_df = pd.DataFrame(X_pca, columns=['PC1', 'PC2'])
 # ================================
 # 5. Perform k-means clustering with k=3
 # ================================
-# FIX 2 (Protocol compliance):
-# Original Gemini code clustered on X_scaled (5D space).
-# This violates the prompt instruction:
-#   "Reduce to 2D using PCA" → "Perform k-means clustering"
-# To enforce methodological consistency across models,
-# clustering is now performed on the PCA-reduced 2D representation.
 kmeans = KMeans(n_clusters=3, random_state=42, n_init=10)
-clusters = kmeans.fit_predict(X_pca)
+clusters = kmeans.fit_predict(X_scaled)
 
 pca_df['Cluster'] = clusters
 
@@ -124,6 +115,5 @@ plt.tight_layout()
 # ================================
 # FIX 3 (Reproducibility):
 # Explicitly saving output as required by evaluation pipeline.
-output_path = "sleep_health_results/gemini3_pro/viz1_rich_context_output.png"
-plt.savefig(output_path, dpi=300, bbox_inches="tight")
+plt.savefig('sleep_health_results/gemini3_pro/run1_rich_context/sleep_viz_rich_context_output.png', dpi=300, bbox_inches='tight')
 plt.close()

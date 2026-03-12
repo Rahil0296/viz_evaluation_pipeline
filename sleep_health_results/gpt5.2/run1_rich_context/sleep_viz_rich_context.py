@@ -96,5 +96,5 @@ plt.legend(title="Cluster")
 plt.tight_layout()
 
 # Save the figure
-plt.savefig("sleep_health_results/gpt5.2/viz1_rich_context_output.png", dpi=300)
+plt.savefig('sleep_health_results/gpt5.2/run1_rich_context/sleep_viz_rich_context_output.png', dpi=300, bbox_inches='tight')
 plt.close()
