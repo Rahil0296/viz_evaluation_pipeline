@@ -43,6 +43,8 @@ Create a correlation heatmap showing how all features relate to each other, with
 - Energy Consumed (kWh) must be visible as a row and column in the heatmap
 - All correlation values must be annotated inside cells
 - Title must reference energy consumption
+
+Provide ONLY the Python code wrapped in triple backticks.
 '''
 
 
