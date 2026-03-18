@@ -43,18 +43,19 @@ Create a correlation heatmap showing how all features relate to each other, with
 - Energy Consumed (kWh) must be visible as a row and column in the heatmap
 - All correlation values must be annotated inside cells
 - Title must reference energy consumption
+
+Provide ONLY the Python code wrapped in triple backticks.
 '''
 
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-# Load the dataset
-# Using the uploaded file path 'ev_charging_patterns.csv'
+# Load dataset
 df = pd.read_csv('data/ev_charging_patterns.csv')
 
-# Specified numeric features
-features = [
+# Select specified numeric features
+columns = [
     'Battery Capacity (kWh)',
     'Charging Duration (hours)',
     'Charging Rate (kW)',
@@ -67,30 +68,34 @@ features = [
     'Energy Consumed (kWh)'
 ]
 
-# Select columns and drop missing values
-df_selected = df[features].dropna()
+df = df[columns]
+
+# Drop missing values
+df = df.dropna()
 
 # Compute correlation matrix
-corr_matrix = df_selected.corr()
+corr_matrix = df.corr()
 
-# Create the visualization
+# Plot heatmap
 plt.figure(figsize=(12, 10))
 sns.heatmap(
-    corr_matrix, 
-    annot=True, 
-    fmt=".2f", 
-    cmap='coolwarm', 
-    center=0, 
-    square=True, 
-    linewidths=.5, 
-    cbar_kws={"shrink": .8}
+    corr_matrix,
+    annot=True,
+    fmt=".2f",
+    cmap='coolwarm',
+    center=0,
+    linewidths=0.5,
+    cbar=True
 )
 
-# Add title and labels
-plt.title('Feature Correlation Heatmap with Emphasis on Energy Consumed (kWh)', fontsize=16, pad=20)
+# Title and layout
+plt.title('Feature Correlation Heatmap (Focus on Energy Consumption)', fontsize=14)
 plt.xticks(rotation=45, ha='right')
 plt.yticks(rotation=0)
+
+# Save figure
 plt.tight_layout()
 
-# Save the visualization
-plt.savefig('ev_charging_results/gemini3_pro/viz1_rich_context_output.png', dpi=300)
+# Show plot
+plt.savefig('ev_charging_results/gpt5.2/run3_rich_context/ev_viz_rich_context_output.png', dpi=300, bbox_inches='tight')
+plt.close()

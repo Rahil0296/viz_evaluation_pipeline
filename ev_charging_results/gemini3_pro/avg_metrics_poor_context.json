@@ -1,0 +1,50 @@
+{
+  "dataset_model_context": "ev_charging_results | gemini3_pro | poor context",
+  "num_runs": 3,
+  "per_run_results": [
+    {
+      "run": "run1_poor_context",
+      "mean_delta_e": 29.62770732096161,
+      "visual_entropy": 1.5769201050325061,
+      "distinguishability_ratio": 1.0,
+      "execution_success": true
+    },
+    {
+      "run": "run2_poor_context",
+      "mean_delta_e": 28.487183600428878,
+      "visual_entropy": 0.7252204622924874,
+      "distinguishability_ratio": 1.0,
+      "execution_success": true
+    },
+    {
+      "run": "run3_poor_context",
+      "mean_delta_e": 30.270157893747914,
+      "visual_entropy": 1.1510339184500618,
+      "distinguishability_ratio": 1.0,
+      "execution_success": true
+    }
+  ],
+  "averages": {
+    "mean_delta_e": 29.4617,
+    "visual_entropy": 1.1511,
+    "distinguishability_ratio": 1.0,
+    "execution_pass_rate": 1.0
+  },
+  "raw_values": {
+    "mean_delta_e_per_run": [
+      29.62770732096161,
+      28.487183600428878,
+      30.270157893747914
+    ],
+    "visual_entropy_per_run": [
+      1.5769201050325061,
+      0.7252204622924874,
+      1.1510339184500618
+    ],
+    "distinguishability_ratio_per_run": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  }
+}

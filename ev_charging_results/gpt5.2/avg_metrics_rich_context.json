@@ -1,0 +1,50 @@
+{
+  "dataset_model_context": "ev_charging_results | gpt5.2 | rich context",
+  "num_runs": 3,
+  "per_run_results": [
+    {
+      "run": "run1_rich_context",
+      "mean_delta_e": 24.106040879225052,
+      "visual_entropy": 1.6037509791913411,
+      "distinguishability_ratio": 1.0,
+      "execution_success": true
+    },
+    {
+      "run": "run2_rich_context",
+      "mean_delta_e": 24.448801317560118,
+      "visual_entropy": 1.6795882790305234,
+      "distinguishability_ratio": 1.0,
+      "execution_success": true
+    },
+    {
+      "run": "run3_rich_context",
+      "mean_delta_e": 25.370119174973073,
+      "visual_entropy": 1.6748946021627866,
+      "distinguishability_ratio": 1.0,
+      "execution_success": true
+    }
+  ],
+  "averages": {
+    "mean_delta_e": 24.6417,
+    "visual_entropy": 1.6527,
+    "distinguishability_ratio": 1.0,
+    "execution_pass_rate": 1.0
+  },
+  "raw_values": {
+    "mean_delta_e_per_run": [
+      24.106040879225052,
+      24.448801317560118,
+      25.370119174973073
+    ],
+    "visual_entropy_per_run": [
+      1.6037509791913411,
+      1.6795882790305234,
+      1.6748946021627866
+    ],
+    "distinguishability_ratio_per_run": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  }
+}
