@@ -2,7 +2,7 @@ import sys
 import os
 import json
 
-# --- PATH FIX START ---
+# PATH FIX START
 # Get the absolute path of the folder where grade_manual.py is located
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -12,21 +12,19 @@ src_path = os.path.join(current_dir, 'src')
 # Force Python to look in that specific folder
 if src_path not in sys.path:
     sys.path.insert(0, src_path)
-# --- PATH FIX END ---
-
-
+# PATH FIX END 
 
 # Now import the metrics
 try:
     from metrics import calculate_metrics_for_visualization
-    print("✅ Successfully imported metrics from src")
+    print("Successfully imported metrics from src")
 except ImportError as e:
-    print(f"❌ CRITICAL IMPORT ERROR: Could not find metrics.py iSn {src_path}")
+    print(f"CRITICAL IMPORT ERROR: Could not find metrics.py iSn {src_path}")
     sys.exit(1)
 
 def grade_manual(image_path, code_path, original_data_path):
     """
-    Manually grades a file you downloaded from ChatGPT Plus.
+    Manually grades a file you downloaded from LLM.  
     """
     print(f"--- Grading Manual Entry ---")
     print(f"Image: {image_path}")
