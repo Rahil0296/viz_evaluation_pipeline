@@ -1,0 +1,50 @@
+{
+  "dataset_model_context": "customer_segments_results | gemini3_pro | rich context",
+  "num_runs": 3,
+  "per_run_results": [
+    {
+      "run": "run1_rich_context",
+      "mean_delta_e": 25.95214709191738,
+      "visual_entropy": 1.511298790825578,
+      "distinguishability_ratio": 1.0,
+      "execution_success": true
+    },
+    {
+      "run": "run2_rich_context",
+      "mean_delta_e": 26.038945351044216,
+      "visual_entropy": 1.5436456553437188,
+      "distinguishability_ratio": 1.0,
+      "execution_success": true
+    },
+    {
+      "run": "run3_rich_context",
+      "mean_delta_e": 32.24304067842035,
+      "visual_entropy": 1.4444610497777484,
+      "distinguishability_ratio": 1.0,
+      "execution_success": true
+    }
+  ],
+  "averages": {
+    "mean_delta_e": 28.078,
+    "visual_entropy": 1.4998,
+    "distinguishability_ratio": 1.0,
+    "execution_pass_rate": 1.0
+  },
+  "raw_values": {
+    "mean_delta_e_per_run": [
+      25.95214709191738,
+      26.038945351044216,
+      32.24304067842035
+    ],
+    "visual_entropy_per_run": [
+      1.511298790825578,
+      1.5436456553437188,
+      1.4444610497777484
+    ],
+    "distinguishability_ratio_per_run": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  }
+}

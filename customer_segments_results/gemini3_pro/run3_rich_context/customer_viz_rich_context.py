@@ -45,19 +45,22 @@ Provide ONLY the Python code wrapped in triple backticks.
 '''
 
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
+import os
 
-# Set visualization style
-sns.set(style="whitegrid")
+# Set visual style
+sns.set_theme(style="whitegrid")
 
-# Load data
-df = pd.read_csv('data/customer_segments.csv')
+# Load data (handling both requested path and typical local path)
+file_path = 'data/customer_segments.csv' if os.path.exists('data/customer_segments.csv') else 'customer_segments.csv'
+df = pd.read_csv(file_path)
 
-# Define features
+# Extract specified features
 features = [
     'Income', 'Recency', 'MntWines', 'MntFruits', 'MntMeatProducts',
     'MntFishProducts', 'MntSweetProducts', 'MntGoldProds',
@@ -65,46 +68,58 @@ features = [
     'NumStorePurchases', 'NumWebVisitsMonth', 'Kidhome', 'Teenhome'
 ]
 
-# Select specified features
-data = df[features]
-
-# Handle missing values
-data = data.dropna()
+# Subset and handle missing values
+data = df[features].dropna()
 
 # Standardize the features
 scaler = StandardScaler()
-scaled_data = scaler.fit_transform(data)
+data_scaled = scaler.fit_transform(data)
 
-# PCA to 2D
+# Reduce to 2D using PCA
 pca = PCA(n_components=2, random_state=42)
-pca_data = pca.fit_transform(scaled_data)
+data_pca = pca.fit_transform(data_scaled)
 
-# K-Means on PCA space
+# Perform k-means clustering with k=3
 kmeans = KMeans(n_clusters=3, random_state=42, n_init=10)
-clusters = kmeans.fit_predict(pca_data)
+cluster_labels = kmeans.fit_predict(data_pca)
 
-# Prepare DataFrame for plotting
-plot_df = pd.DataFrame(pca_data, columns=['PC1', 'PC2'])
-plot_df['Cluster'] = clusters.astype(str)
-
-# Visualization
+# Create visualization
 plt.figure(figsize=(10, 8))
+
+# Scatter plot with colorblind-friendly palette
 sns.scatterplot(
-    data=plot_df,
-    x='PC1',
-    y='PC2',
-    hue='Cluster',
-    palette='viridis',
-    s=60,
+    x=data_pca[:, 0], 
+    y=data_pca[:, 1], 
+    hue=cluster_labels, 
+    palette='colorblind', 
+    s=70, 
     alpha=0.8,
-    edgecolor='w'
+    edgecolor='w',
+    linewidth=0.5
 )
 
-plt.title('Customer Segments Clustering (PCA Projection)', fontsize=16)
-plt.xlabel('Principal Component 1', fontsize=12)
-plt.ylabel('Principal Component 2', fontsize=12)
-plt.legend(title='Cluster', bbox_to_anchor=(1.05, 1), loc='upper left')
+# Plot cluster centers
+centers = kmeans.cluster_centers_
+plt.scatter(
+    centers[:, 0], 
+    centers[:, 1], 
+    c='black', 
+    s=200, 
+    marker='X', 
+    label='Centroids'
+)
+
+# Format axes, title, and legend
+plt.title('Customer Segments based on Purchasing Behavior\n(PCA Reduced to 2D, k=3)', fontsize=16, pad=15)
+plt.xlabel(f'Principal Component 1 ({pca.explained_variance_ratio_[0]*100:.1f}% Variance)', fontsize=12)
+plt.ylabel(f'Principal Component 2 ({pca.explained_variance_ratio_[1]*100:.1f}% Variance)', fontsize=12)
+
+# Update legend
+handles, labels = plt.gca().get_legend_handles_labels()
+plt.legend(handles, ['Cluster 0', 'Cluster 1', 'Cluster 2', 'Centroids'], title='Customer Groups', bbox_to_anchor=(1.05, 1), loc='upper left')
 
 plt.tight_layout()
-plt.savefig('customer_segments_results/gemini3_pro/viz1_rich_context_output.png', dpi=300)
+
+# Save final visualization
+plt.savefig('customer_segments_results/gemini3_pro/run3_rich_context/customer_viz_rich_context_output.png', dpi=300, bbox_inches='tight')
 plt.close()

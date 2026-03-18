@@ -20,6 +20,8 @@ import pandas as pd
 from PIL import Image
 from typing import Dict, List, Tuple, Optional
 from collections import Counter
+from sklearn.cluster import KMeans
+import warnings
 import matplotlib.colors as mcolors
 from colormath.color_objects import sRGBColor, LabColor
 from colormath.color_conversions import convert_color
@@ -112,38 +114,33 @@ class VisualizationMetrics:
 
     def extract_dominant_colors(self, n_colors: int = 10) -> List[Tuple[int, int, int]]:
         """
-        Extract dominant colors from the visualization image
-
-        Args:
-            n_colors: Number of dominant colors to extract
-
-        Returns:
-            List of RGB tuples
+        Extract dominant colors using K-Means clustering.
+        Replaces pixel frequency sampling which was unstable across runs.
         """
         if self.image is None:
             return []
 
-        # Convert image to RGB if needed
         img_rgb = self.image.convert('RGB')
-
-        # Resize for faster processing
         img_small = img_rgb.resize((150, 150))
+        pixels = np.array(img_small).reshape(-1, 3).astype(np.float32)
 
-        # Get all pixels
-        pixels = list(img_small.getdata())
+        # Filter out near-white background pixels
+        non_background = pixels[pixels.sum(axis=1) < 740]
 
-        # Count color frequencies
-        color_counts = Counter(pixels)
+        if len(non_background) < n_colors:
+            non_background = pixels
 
-        # Get most common colors (excluding white and near-white backgrounds)
-        dominant_colors = []
-        for color, count in color_counts.most_common(n_colors * 3):
-            # Skip very light colors (likely background)
-            if sum(color) < 740:  # Not too close to white (255, 255, 255)
-                dominant_colors.append(color)
-                if len(dominant_colors) >= n_colors:
-                    break
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            kmeans = KMeans(n_clusters=n_colors, n_init=10, random_state=42)
+            kmeans.fit(non_background)
 
+        dominant_colors = [
+            tuple(center.astype(int))
+            for center in kmeans.cluster_centers_
+        ]
+
+        logger.info(f"Extracted {len(dominant_colors)} dominant colors via K-Means")
         return dominant_colors
 
     def calculate_color_delta_e(self, colors: List[Tuple[int, int, int]] = None) -> Dict:
