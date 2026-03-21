@@ -1,40 +1,40 @@
 {
-  "dataset_model_context": "titanic_results | gemini3_pro/survival | poor context",
+  "dataset_model_context": "titanic_results/gemini3_pro | survival | poor context",
   "num_runs": 3,
   "per_run_results": [
     {
       "run": "run1_poor_context",
-      "mean_delta_e": 40.89508939290614,
+      "mean_delta_e": 36.97628671088316,
       "visual_entropy": 1.0459085581880274,
-      "distinguishability_ratio": 0.8888888888888888,
+      "distinguishability_ratio": 1.0,
       "execution_success": true
     },
     {
       "run": "run2_poor_context",
-      "mean_delta_e": 20.144139994978758,
+      "mean_delta_e": 20.660836409901677,
       "visual_entropy": 1.0817645763791555,
-      "distinguishability_ratio": 0.9333333333333333,
+      "distinguishability_ratio": 0.9777777777777777,
       "execution_success": true
     },
     {
       "run": "run3_poor_context",
-      "mean_delta_e": 24.276890590647636,
+      "mean_delta_e": 24.364322304481604,
       "visual_entropy": 1.0476414749824927,
-      "distinguishability_ratio": 0.8888888888888888,
+      "distinguishability_ratio": 1.0,
       "execution_success": true
     }
   ],
   "averages": {
-    "mean_delta_e": 28.4387,
+    "mean_delta_e": 27.3338,
     "visual_entropy": 1.0584,
-    "distinguishability_ratio": 0.9037,
+    "distinguishability_ratio": 0.9926,
     "execution_pass_rate": 1.0
   },
   "raw_values": {
     "mean_delta_e_per_run": [
-      40.89508939290614,
-      20.144139994978758,
-      24.276890590647636
+      36.97628671088316,
+      20.660836409901677,
+      24.364322304481604
     ],
     "visual_entropy_per_run": [
       1.0459085581880274,
@@ -42,9 +42,9 @@
       1.0476414749824927
     ],
     "distinguishability_ratio_per_run": [
-      0.8888888888888888,
-      0.9333333333333333,
-      0.8888888888888888
+      1.0,
+      0.9777777777777777,
+      1.0
     ]
   }
 }

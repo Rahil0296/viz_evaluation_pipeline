@@ -51,6 +51,5 @@ axes[1,2].set_title("Survival Rate Heatmap (Sex vs Class)")
 
 plt.tight_layout()
 
-# FIX: correct savefig path
 plt.savefig('titanic_results/gpt5.2/dashboard/run1_poor_context/dashboard_viz_poor_context_output.png', dpi=300, bbox_inches='tight')
 plt.close()

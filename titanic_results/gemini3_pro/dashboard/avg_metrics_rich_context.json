@@ -1,40 +1,40 @@
 {
-  "dataset_model_context": "titanic_results | gemini3_pro/dashboard | rich context",
+  "dataset_model_context": "titanic_results/gemini3_pro | dashboard | rich context",
   "num_runs": 3,
   "per_run_results": [
     {
       "run": "run1_rich_context",
-      "mean_delta_e": 30.16579675251763,
+      "mean_delta_e": 28.045006559636228,
       "visual_entropy": 1.2421489667641117,
-      "distinguishability_ratio": 0.8,
+      "distinguishability_ratio": 1.0,
       "execution_success": true
     },
     {
       "run": "run2_rich_context",
-      "mean_delta_e": 30.16579675251763,
+      "mean_delta_e": 27.995782404638405,
       "visual_entropy": 1.24215098933099,
-      "distinguishability_ratio": 0.8,
+      "distinguishability_ratio": 1.0,
       "execution_success": true
     },
     {
       "run": "run3_rich_context",
-      "mean_delta_e": 37.60269616156798,
+      "mean_delta_e": 38.044993111837506,
       "visual_entropy": 1.4393498142701877,
-      "distinguishability_ratio": 0.9777777777777777,
+      "distinguishability_ratio": 1.0,
       "execution_success": true
     }
   ],
   "averages": {
-    "mean_delta_e": 32.6448,
+    "mean_delta_e": 31.3619,
     "visual_entropy": 1.3079,
-    "distinguishability_ratio": 0.8593,
+    "distinguishability_ratio": 1.0,
     "execution_pass_rate": 1.0
   },
   "raw_values": {
     "mean_delta_e_per_run": [
-      30.16579675251763,
-      30.16579675251763,
-      37.60269616156798
+      28.045006559636228,
+      27.995782404638405,
+      38.044993111837506
     ],
     "visual_entropy_per_run": [
       1.2421489667641117,
@@ -42,9 +42,9 @@
       1.4393498142701877
     ],
     "distinguishability_ratio_per_run": [
-      0.8,
-      0.8,
-      0.9777777777777777
+      1.0,
+      1.0,
+      1.0
     ]
   }
 }
