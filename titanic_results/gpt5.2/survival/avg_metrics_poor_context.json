@@ -14,21 +14,21 @@
       "mean_delta_e": 18.75078785426401,
       "visual_entropy": 0.8923664770190768,
       "distinguishability_ratio": 1.0,
-      "execution_success": true
+      "execution_success": false
     },
     {
       "run": "run3_poor_context",
       "mean_delta_e": 18.68190830529022,
       "visual_entropy": 0.8897027968414426,
       "distinguishability_ratio": 1.0,
-      "execution_success": true
+      "execution_success": false
     }
   ],
   "averages": {
     "mean_delta_e": 19.0012,
     "visual_entropy": 0.8808,
     "distinguishability_ratio": 1.0,
-    "execution_pass_rate": 1.0
+    "execution_pass_rate": 0.3333
   },
   "raw_values": {
     "mean_delta_e_per_run": [
