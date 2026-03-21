@@ -10,7 +10,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 # Load dataset
-df = pd.read_csv("data/titanic.csv")  # FIX: corrected file path
+df = pd.read_csv("data/titanic.csv")  
 
 # FIX: corrected column names from 'Pclass'/'Survived' to 'pclass'/'survived' (lowercase in seaborn titanic dataset)
 survival_rates = df.groupby("pclass")["survived"].mean()

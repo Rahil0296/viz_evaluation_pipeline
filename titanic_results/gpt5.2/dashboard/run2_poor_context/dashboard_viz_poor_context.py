@@ -52,6 +52,5 @@ axes[1,2].set_title("Survival by Embarkation Port")
 
 plt.tight_layout(rect=[0, 0, 1, 0.96])
 
-# FIX: correct savefig path
 plt.savefig('titanic_results/gpt5.2/dashboard/run2_poor_context/dashboard_viz_poor_context_output.png', dpi=300, bbox_inches='tight')
 plt.close()

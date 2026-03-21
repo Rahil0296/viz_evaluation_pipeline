@@ -1,40 +1,40 @@
 {
-  "dataset_model_context": "titanic_results | gpt5.2/survival | rich context",
+  "dataset_model_context": "titanic_results/gpt5.2 | survival | rich context",
   "num_runs": 3,
   "per_run_results": [
     {
       "run": "run1_rich_context",
-      "mean_delta_e": 32.20941344908032,
+      "mean_delta_e": 27.868673723098865,
       "visual_entropy": 0.8443550843486272,
-      "distinguishability_ratio": 0.8,
+      "distinguishability_ratio": 1.0,
       "execution_success": true
     },
     {
       "run": "run2_rich_context",
-      "mean_delta_e": 30.98672576441444,
+      "mean_delta_e": 26.84181455777744,
       "visual_entropy": 1.4868295344482205,
-      "distinguishability_ratio": 0.7555555555555555,
+      "distinguishability_ratio": 1.0,
       "execution_success": true
     },
     {
       "run": "run3_rich_context",
-      "mean_delta_e": 25.26244168004198,
+      "mean_delta_e": 28.885112080196834,
       "visual_entropy": 1.1085479012224764,
-      "distinguishability_ratio": 0.6444444444444445,
+      "distinguishability_ratio": 1.0,
       "execution_success": true
     }
   ],
   "averages": {
-    "mean_delta_e": 29.4862,
+    "mean_delta_e": 27.8652,
     "visual_entropy": 1.1466,
-    "distinguishability_ratio": 0.7333,
+    "distinguishability_ratio": 1.0,
     "execution_pass_rate": 1.0
   },
   "raw_values": {
     "mean_delta_e_per_run": [
-      32.20941344908032,
-      30.98672576441444,
-      25.26244168004198
+      27.868673723098865,
+      26.84181455777744,
+      28.885112080196834
     ],
     "visual_entropy_per_run": [
       0.8443550843486272,
@@ -42,9 +42,9 @@
       1.1085479012224764
     ],
     "distinguishability_ratio_per_run": [
-      0.8,
-      0.7555555555555555,
-      0.6444444444444445
+      1.0,
+      1.0,
+      1.0
     ]
   }
 }

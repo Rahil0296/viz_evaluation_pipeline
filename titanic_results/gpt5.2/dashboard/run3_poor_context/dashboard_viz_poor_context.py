@@ -52,6 +52,6 @@ axes[1, 2].set_title("Feature Correlation Heatmap")
 
 plt.tight_layout()
 
-# FIX: correct savefig path
+
 plt.savefig('titanic_results/gpt5.2/dashboard/run3_poor_context/dashboard_viz_poor_context_output.png', dpi=300, bbox_inches='tight')
 plt.close()
