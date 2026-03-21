@@ -63,7 +63,7 @@
     "has_imports": true,
     "has_visualization": true,
     "has_save": true,
-    "execution_success": true,
+    "execution_success": false,
     "error_message": null,
     "accuracy_score": 100.0
   },
