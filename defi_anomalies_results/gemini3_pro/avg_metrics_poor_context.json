@@ -4,37 +4,37 @@
   "per_run_results": [
     {
       "run": "run1_poor_context",
-      "mean_delta_e": 21.146175128915278,
+      "mean_delta_e": 21.095690677807298,
       "visual_entropy": 0.9851055274115177,
-      "distinguishability_ratio": 0.8888888888888888,
+      "distinguishability_ratio": 1.0,
       "execution_success": true
     },
     {
       "run": "run2_poor_context",
-      "mean_delta_e": 24.995597820935703,
+      "mean_delta_e": 25.952553862201846,
       "visual_entropy": 0.9678685845930811,
-      "distinguishability_ratio": 0.8888888888888888,
+      "distinguishability_ratio": 1.0,
       "execution_success": true
     },
     {
       "run": "run3_poor_context",
-      "mean_delta_e": 24.963420982056302,
+      "mean_delta_e": 26.099597840572162,
       "visual_entropy": 0.9771624593558604,
-      "distinguishability_ratio": 0.8888888888888888,
+      "distinguishability_ratio": 1.0,
       "execution_success": true
     }
   ],
   "averages": {
-    "mean_delta_e": 23.7017,
+    "mean_delta_e": 24.3826,
     "visual_entropy": 0.9767,
-    "distinguishability_ratio": 0.8889,
+    "distinguishability_ratio": 1.0,
     "execution_pass_rate": 1.0
   },
   "raw_values": {
     "mean_delta_e_per_run": [
-      21.146175128915278,
-      24.995597820935703,
-      24.963420982056302
+      21.095690677807298,
+      25.952553862201846,
+      26.099597840572162
     ],
     "visual_entropy_per_run": [
       0.9851055274115177,
@@ -42,9 +42,9 @@
       0.9771624593558604
     ],
     "distinguishability_ratio_per_run": [
-      0.8888888888888888,
-      0.8888888888888888,
-      0.8888888888888888
+      1.0,
+      1.0,
+      1.0
     ]
   }
 }
