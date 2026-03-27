@@ -1,6 +1,4 @@
 '''
-RICH CONTEXT PROMPT USED:
-
 You are an expert data scientist and visualization specialist.
 
 ## Dataset Context:
@@ -34,6 +32,16 @@ Use ONLY the following numeric features:
 - Save the final visualization as 'output.png' with DPI=300
 - Include all necessary imports
 - Make the code fully executable
+
+## Design Principles:
+- Use readable axis labels and title
+- Use colorblind-friendly cluster colors
+- Include legend
+
+## Your Task:
+Create a 2D visualization that clusters customers based on their purchasing behavior.
+
+Provide ONLY the Python code wrapped in triple backticks.
 '''
 
 import pandas as pd
@@ -96,5 +104,5 @@ plt.legend()
 plt.tight_layout()
 
 # FIX 2 (Reproducibility): save instead of show
-plt.savefig('customer_segments_results/gpt5.2/viz1_rich_context_output.png', dpi=300, bbox_inches="tight")
+plt.savefig('customer_segments_results/gpt5.2/run1_rich_context/customer_viz_rich_context_output.png', dpi=300, bbox_inches='tight')
 plt.close()
