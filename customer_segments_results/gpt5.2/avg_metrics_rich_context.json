@@ -1,0 +1,50 @@
+{
+  "dataset_model_context": "customer_segments_results | gpt5.2 | rich context",
+  "num_runs": 3,
+  "per_run_results": [
+    {
+      "run": "run1_rich_context",
+      "mean_delta_e": 27.808913814714195,
+      "visual_entropy": 1.7249566570041028,
+      "distinguishability_ratio": 1.0,
+      "execution_success": true
+    },
+    {
+      "run": "run2_rich_context",
+      "mean_delta_e": 27.78677756353041,
+      "visual_entropy": 1.5509545187487073,
+      "distinguishability_ratio": 1.0,
+      "execution_success": true
+    },
+    {
+      "run": "run3_rich_context",
+      "mean_delta_e": 29.816438772769125,
+      "visual_entropy": 1.388548489245256,
+      "distinguishability_ratio": 1.0,
+      "execution_success": true
+    }
+  ],
+  "averages": {
+    "mean_delta_e": 28.4707,
+    "visual_entropy": 1.5548,
+    "distinguishability_ratio": 1.0,
+    "execution_pass_rate": 1.0
+  },
+  "raw_values": {
+    "mean_delta_e_per_run": [
+      27.808913814714195,
+      27.78677756353041,
+      29.816438772769125
+    ],
+    "visual_entropy_per_run": [
+      1.7249566570041028,
+      1.5509545187487073,
+      1.388548489245256
+    ],
+    "distinguishability_ratio_per_run": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  }
+}
